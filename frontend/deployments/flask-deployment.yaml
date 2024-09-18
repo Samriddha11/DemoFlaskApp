@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskfront
+  namespace: flask-app
+spec:
+  selector:
+    matchLabels:
+      app: flaskfront
+      tier: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flaskfront
+        tier: frontend
+    spec:
+      containers:
+      - name: flaskfront
+        image: neosam01/flaskredis:v6
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8989
