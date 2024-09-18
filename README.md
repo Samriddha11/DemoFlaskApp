@@ -9,3 +9,4 @@ We have created a FF product_details on Harness. This is a classic scenario wher
 In the second scenario, we have used POD API Modify Body fault to corrupt and mock the response of Flask Service for path /getproductdetails to provide as Test. In our product catalog application we have handled the validation and error handling  where if the response does not contain P as keyword for product. We respond to the user as a Bad Request, Corrupted response. An HTTP probe is created to validate the error handling scenarios.
 
 In the second scenario, we have dropped the network packets between Product Catalog and Flask app to verify if the application hangs or if the application uses async communication (This is somethign that we can explain in depth to the customer)
+<img width="1220" alt="app-flow" src="https://github.com/user-attachments/assets/070859d1-ab92-4a20-8589-879977b20ddf">
